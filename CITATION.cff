@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "SecISAC: MATLAB Simulation Code for Secure ISAC Stackelberg Game"
+abstract: >
+  MATLAB codebase implementing the Successive Convex Approximation (SCA)
+  resource allocation and deep reinforcement learning-based UAV trajectory
+  optimisation for a secure Integrated Sensing and Communication (ISAC)
+  system modelled as a Stackelberg game against a mobile adversary.
+  Includes CVX-based SDP solvers, Rician channel models,
+  CRLB-constrained radar sensing, and physical-layer secrecy constraints.
+authors:
+  - family-names: "Mamaghani"
+    given-names: "Milad Tatar"
+  - family-names: "Zhou"
+    given-names: "Xiangyun"
+  - family-names: "Yang"
+    given-names: "Nan"
+  - family-names: "Lee Swindlehurst"
+    given-names: "A."
+repository-code: "https://github.com/<your-username>/SecISAC-Mamaghani"
+license: MIT
+version: "1.0.0"
+date-released: "2026-01-01"
+keywords:
+  - ISAC
+  - physical-layer security
+  - mobile eavesdropping
+  - beamforming
+  - SCA
+  - UAV
+  - Stackelberg game
+  - deep reinforcement learning
+  - MATLAB
+preferred-citation:
+  type: article
+  title: >-
+    Securing Integrated Sensing and Communication Against a Mobile Adversary:
+    A Stackelberg Game With Deep Reinforcement Learning
+  authors:
+    - family-names: "Mamaghani"
+      given-names: "Milad Tatar"
+    - family-names: "Zhou"
+      given-names: "Xiangyun"
+    - family-names: "Yang"
+      given-names: "Nan"
+    - family-names: "Lee Swindlehurst"
+      given-names: "A."
+  journal: "IEEE Journal on Selected Areas in Communications"
+  volume: 44
+  start: 942
+  end: 958
+  year: 2026
+  doi: "10.1109/JSAC.2025.3611404"
+  identifiers:
+    - type: doi
+      value: "10.1109/JSAC.2025.3611404"

@@ -1,0 +1,18 @@
+# MATLAB artifacts
+*.asv
+*.m~
+*.mex*
+slprj/
+
+# Data and result files (large — share separately)
+data/*.mat
+results/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# CVX solver cache
+cvx_*.mat
