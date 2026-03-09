@@ -1,12 +1,38 @@
 # Securing Integrated Sensing and Communication Against a Mobile Adversary: A Stackelberg Game With Deep Reinforcement Learning #
 
+**Companion code for:**
+
 This repository contains the MATLAB simulation code for the paper:
 
-> *Milad Tatar Mamaghani et el., "[Securing Integrated Sensing and Communication Against a Mobile Adversary: A Stackelberg Game With Deep Reinforcement Learning](https://ieeexplore.ieee.org/abstract/document/11172669),"  IEEE Journal on Selected Areas in Communications, vol. 44, pp. 942-958, 2026.*
+> Milad Tatar Mamaghani et el., "[Securing Integrated Sensing and Communication Against a Mobile Adversary: A Stackelberg Game With Deep Reinforcement Learning](https://ieeexplore.ieee.org/abstract/document/11172669),"  IEEE Journal on Selected Areas in Communications, vol. 44, pp. 942-958, 2026.
+
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2022b%2B-blue)](https://www.mathworks.com/)
+[![CVX](https://img.shields.io/badge/CVX-2.2-orange)](http://cvxr.com/cvx/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## Abstract of Article ##
 In this paper, we study a secure integrated sensing and communication (ISAC) system employing a full-duplex base station with sensing capabilities against a mobile proactive adversarial target—a malicious uncrewed aerial vehicle (M-UAV). We develop a game-theoretic model to enhance communication security, radar sensing accuracy, and power efficiency. The interaction between the legitimate network and the mobile adversary is formulated as a non-cooperative Stackelberg game (NSG), where the M-UAV acts as the leader and strategically adjusts its trajectory to improve its eavesdropping ability while conserving power and avoiding obstacles. In response, the legitimate network, acting as the follower, dynamically allocates resources to minimize network power usage while ensuring required secrecy rates and sensing performance. To address this challenging problem, we propose a low-complexity successive convex approximation (SCA) method for network resource optimization combined with a deep reinforcement learning (DRL) algorithm for adaptive M-UAV trajectory planning through sequential interactions and learning. Simulation results demonstrate the efficacy of the proposed method in addressing security challenges of dynamic ISAC systems in 6G, i.e., achieving a Stackelberg equilibrium with robust performance while mitigating the adversary’s ability to intercept network signals.
 
+
+---
+
+## Overview
+
+This repository provides the full MATLAB simulation code for a **Secure Integrated Sensing and Communication (ISAC)** system modelled as a two-player game:
+
+- **Player 1 (Radar Base Station / R-BS):** Jointly optimizes downlink communication beamforming matrices **V**, radar sensing covariance **W**, and uplink user power allocation **P** to minimise total network power consumption (NPC) subject to physical-layer security and sensing quality constraints.
+- **Player 2 (Malicious UAV/ M-UAV):** Learns an optimal 3-D trajectory via a Markov Decision Process (MDP) / reinforcement learning framework to maximise a utility that trades off communication/sensing quality against flight power.
+
+Key features implemented:
+- **Successive Convex Approximation (SCA)** for the non-convex resource allocation problem (solved via CVX/SDP)
+- **Rician channel model** with LoS probability for both communication and sensing links
+- **Cramér–Rao Lower Bound (CRLB)**-based radar sensing constraint
+- **Physical-layer secrecy** constraints on both uplink and downlink secrecy rates (UCSR / DCSR)
+- **Artificial noise (AN)** jamming beamformer as a design variable
+- UAV **flight power model** (blade profile + parasitic + climb + induced)
+- Benchmark comparison: *Proposed* (with AN) vs *Without AN*
+
+---
 
 ## Implementation  ##
 The code implements a Double DQN (DDQN) agent that jointly optimises the M-UAV trajectory and physical-layer resource allocation to maximise an ISAC utility while minimising flight power, subject to uplink/downlink secrecy, CRLB-based sensing, and obstacle avoidance constraints.
@@ -200,6 +226,7 @@ Each plotting script is self-contained. After training agents for `lambda ∈ {0
 ---
 
 ## System Model
+
 
 The ISAC system consists of:
 
